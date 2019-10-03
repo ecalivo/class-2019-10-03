@@ -1,0 +1,28 @@
+---
+title: "Class-2019-10-03"
+author: "Emmanuel Calivo"
+date: "10/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(googlesheets4)
+
+```
+
+``` {r}
+x <- read_sheet("1cgP-e6THVfiW5TJ95QhX3jkNxKvc8Sicp9k_BkSRd2I")
+
+my.cold.call <- function() {
+  sheets_deauth()
+  y <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg")
+  y %>% 
+    select("Student") %>% 
+    sample_n(1) %>% 
+    print()
+}
+```
